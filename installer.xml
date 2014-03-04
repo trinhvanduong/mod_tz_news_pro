@@ -7,7 +7,7 @@
 	<authorUrl>http://www.templaza.com</authorUrl>
 	<copyright>Copyright (c)2013</copyright>
 	<license>GNU/GPL v3 or later license</license>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description></description>
 
     <scriptfile>install.script.php</scriptfile>
@@ -20,13 +20,13 @@
         <ext type="library" enabled="true">
             <folder>lib_tzm</folder>
             <name>lib_tzm</name>
-            <description>Templaza Extension development framewrok</description>
+            <description>Templaza Extension development framework</description>
         </ext>
 
         <ext type="module" client="site" enabled="true">
-            <folder>mod_tz_new_pro</folder>
+            <folder>mod_tz_news_pro</folder>
             <name>TZ module</name>
-            <description>Templaza Extension development framewrok</description>
+            <description>Templaza Extension development framework</description>
         </ext>
 
     </extlist>
