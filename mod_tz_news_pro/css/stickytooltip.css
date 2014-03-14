@@ -25,6 +25,14 @@
 .tz_stichky{
     width: 350px;
 }
-.tz_title{
-    width: auto;
+.tz_tooltip_image img{
+    width: 100%;
+}
+.tz_tooltip_title{
+    font-size: 14px;
+}
+.tz_tooltip_title a {
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
 }

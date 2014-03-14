@@ -17,14 +17,6 @@ span.tz_date{
 .info_accordion{
     display: none;
 }
-.tz_news .tz_accordion h3.tz_title{
-    cursor: pointer;
-    background: url(../images/max.jpg) left center no-repeat;
-    padding-left: 30px;
-}
-.tz_news .accordion-open h3.tz_title{
-    background: url(../images/mini.jpg) left center no-repeat;
-}
 
 #slides {
     position: relative;
@@ -136,7 +128,7 @@ p.small-italic {
 
     padding:10px;
 }
-.tz_image{
-    float: left;
-    margin-right: 10px;
+.tz_description {
+    font-size: 13px;
+    color: #000000;
 }

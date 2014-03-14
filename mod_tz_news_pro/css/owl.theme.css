@@ -77,3 +77,63 @@
 	min-height: 150px;
 	background: url(../images/AjaxLoader.gif) no-repeat center center
 }
+
+.tz_carousel_image img {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    padding-bottom: 25px;
+}
+
+.tz_carousel_description {
+    display: block;
+    font-size: 13px;
+}
+
+.tz_carousel_description p {
+    margin-top: 0;
+}
+
+.tz_carousel_readmore a {
+    text-decoration: none;
+    display: inline-block;
+    color: #008aff;
+}
+
+.tz_carousel_date, .tz_carousel_hits, .tz_carousel_author, .tz_carousel_category {
+    font-style: italic;
+    display: block;
+}
+.tz_carousel_title{
+    line-height: 20px;
+}
+.tz_carousel_title a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+ul.tz_news {
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.dv1 {
+    display: block;
+}
+
+.dv2 {
+    clear: both;
+    display: block;
+    padding-top: 30px;
+}
+.owl-item{
+    border-left: 1px solid rgba(0,0,0,0.2);
+}
+.owl-item:last-child{
+    border-right: 1px solid rgba(0,0,0,0.2);
+}
+.owl-item .slide{
+    padding: 0 10px;
+}

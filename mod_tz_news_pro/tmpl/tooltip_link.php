@@ -6,7 +6,7 @@
  * Time: 6:40 PM
  */ ?>
 <div id="sticky<?php echo $i; ?>" class="atip tz_stichky">
-    <div class="info_slide tz_link">
+    <div class="info_slide tz_tooltip_link">
 
         <a class="title" href="<?php echo $media->link_url; ?>"
            target="<?php echo $media->link_target; ?>"

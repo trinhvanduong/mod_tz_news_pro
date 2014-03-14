@@ -122,37 +122,33 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/stickytoolt
     <?php if (isset($list) && !empty($list)) :
         foreach ($list as $i => $item) : $media = $item->media; ?>
             <?php if (!$media or ($media != null  AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')): ?>
-                <h6 class="tz_title">
+                <h6 class="tz_tooltip_title">
                     <a class="tz_title_like" data-tooltip="sticky<?php echo $i ?>" href="<?php echo $item->link; ?>">
                         <?php echo $item->title; ?>
                     </a>
                 </h6>
             <?php endif; ?>
-
             <?php if ($show_quote == 1 AND $media AND $media->type == 'quote'): ?>
-                <h6 class="tz_title">
+                <h6 class="tz_tooltip_title">
                     <a class="tz_title_like" data-tooltip="sticky<?php echo $i ?>" href="<?php echo $item->link; ?>">
                         <?php echo $item->title; ?>
                     </a>
                 </h6>
             <?php endif; ?>
-
             <?php if ($show_link == 1 AND $media AND $media->type == 'link'): ?>
-                <h6 class="tz_title">
+                <h6 class="tz_tooltip_title">
                     <a class="tz_title_like" data-tooltip="sticky<?php echo $i ?>" href="<?php echo $item->link; ?>">
                         <?php echo $item->title; ?>
                     </a>
                 </h6>
             <?php endif; ?>
-
             <?php if ($show_audio == 1 AND $media AND $media->type == 'audio'): ?>
-                <h6 class="tz_title">
+                <h6 class="tz_tooltip_title">
                     <a class="tz_title_like" data-tooltip="sticky<?php echo $i ?>" href="<?php echo $item->link; ?>">
                         <?php echo $item->title; ?>
                     </a>
                 </h6>
             <?php endif; ?>
-
         <?php endforeach; ?>
     <?php endif; ?>
 </div>
@@ -164,9 +160,9 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/stickytoolt
         foreach ($list as $i => $item) :$media = $item->media; ?>
             <?php if (!$media or ($media != null  AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')): ?>
                 <div id="sticky<?php echo $i; ?>" class="atip tz_stichky">
-                    <div class="info_slide">
+                    <div class="info_slide tz_tooltip_default">
                         <?php if ($title == 1): ?>
-                            <h6 class="tz_title">
+                            <h6 class="tz_tooltip_title">
                                 <a href="<?php echo $item->link; ?>"
                                    title="<?php echo $item->title; ?>">
                                     <?php echo $item->title; ?>
@@ -174,7 +170,7 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/stickytoolt
                             </h6>
                         <?php endif; ?>
                         <?php if ($image == 1 AND $item->image != null) : ?>
-                            <span class="tz_image">
+                            <span class="tz_tooltip_image">
                               <?php if ($media) :
                                   $title_image = $media->imagetitle;
                               else :
@@ -189,7 +185,7 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/stickytoolt
                         <?php endif; ?>
 
                         <?php if ($des == 1) : ?>
-                            <span class="tz_description">
+                            <span class="tz_tooltip_description">
                             <?php if ($limittext) {
                                 echo substr($item->intro, 3, $limittext);
                             } else {
@@ -199,28 +195,28 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/stickytoolt
                         <?php endif; ?>
 
                         <?php if ($date == 1) : ?>
-                            <span class="tz_date">
+                            <span class="tz_tooltip_date">
                             <?php echo JText::sprintf('MOD_TZ_NEWS_DATE_ALL', JHtml::_('date', $item->created, JText::_('MOD_TZ_NEWS_DATE_FOMAT'))); ?>
                         </span>
                         <?php endif; ?>
                         <?php if ($hits == 1) : ?>
-                            <span class="tz_hits">
+                            <span class="tz_tooltip_hits">
                             <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $item->hit) ?>
                         </span>
                         <?php endif; ?>
                         <?php if ($author_new == 1): ?>
-                            <span class="tz_author">
+                            <span class="tz_tooltip_author">
                             <?php echo JText::sprintf('MOD_TZ_NEWS_AUTHOR', $item->author); ?>
                         </span>
                         <?php endif; ?>
                         <?php if ($cats_new == 1): ?>
-                            <span class="tz_category">
+                            <span class="tz_tooltip_category">
                             <?php echo JText::sprintf('MOD_TZ_NEWS_CATEGORY', $item->category); ?>
                         </span>
                         <?php endif; ?>
 
                         <?php if ($readmore == 1) : ?>
-                            <span class="tz_readmore">
+                            <span class="tz_tooltip_readmore">
                             <a href="<?php echo $item->link; ?>"><?php echo JText::_('MOD_TZ_NEWS_READ_MORE') ?></a>
                         </span>
                         <?php endif; ?>
