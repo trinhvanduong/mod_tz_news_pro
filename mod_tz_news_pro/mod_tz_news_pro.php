@@ -25,9 +25,9 @@ $document = JFactory::getDocument();
 if ($params->get('enable_jquery') == 1) {
     $document->addScript(JUri::base() . 'modules/mod_tz_news_pro/js/jquery-1.9.1.min.js');
 }
-$document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/mod_tz_new_marquee.css');
-$document->addScript(JUri::base() . 'modules/mod_tz_news_pro/js/jquery.simplyscroll.min.js');
-$document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/mod_tz_news.css');
+
+//$document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/mod_tz_news.css');
+
 
 // Include the syndicate functions only once
 require_once dirname(__FILE__) . '/helper.php';
@@ -130,3 +130,4 @@ if ($params->get('rewindSpeed', 1000)):    $options->rewindSpeed = $params->get(
 require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'default'));
 
 ?>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>

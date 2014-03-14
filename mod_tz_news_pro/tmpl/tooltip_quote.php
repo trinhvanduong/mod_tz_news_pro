@@ -8,7 +8,7 @@
 ?>
 
 <div id="sticky<?php echo $i; ?>" class="atip tz_stichky">
-    <div class="info_slide tz_quote">
+    <div class="info_slide tz_tooltip_quote">
 
         <i class="icon-quote"></i>
         <?php echo $media->quote_text ?>

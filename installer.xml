@@ -7,7 +7,7 @@
 	<authorUrl>http://www.templaza.com</authorUrl>
 	<copyright>Copyright (c)2013</copyright>
 	<license>GNU/GPL v3 or later license</license>
-	<version>3.0.1</version>
+	<version>3.1.0</version>
 	<description></description>
 
     <scriptfile>install.script.php</scriptfile>

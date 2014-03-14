@@ -1,7 +1,11 @@
 # TZ News Pro module - Joomla 2.5 and Joomla 3.x
 
 *** Changelog ***
+14/03/2014 - 3.1.0
 
+	1. Fix displaying problem with Portfolio's types: quote, audio,link.
+	2. Add new css for all layout.
+	
 03/04/14 - 3.0.0
 
 	1. Fixed problem display content in layout "Tabs".

@@ -21,7 +21,9 @@
 defined('_JEXEC') or die;
 
 require_once JPATH_SITE . '/components/com_content/helpers/route.php';
-require_once JPATH_SITE . '/components/com_tz_portfolio/helpers/route.php';
+if ($content == 'tz_portfolio') {
+    require_once JPATH_SITE . '/components/com_tz_portfolio/helpers/route.php';
+}
 require_once(JPATH_SITE . '/libraries/tzm/sources/modules/modules.php');
 jimport('joomla.application.component.model');
 
