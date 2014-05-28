@@ -28,7 +28,7 @@ if ($list):?>
     <div id="slides" class="flexslider">
         <ul class="slides">
             <?php foreach ($list as $item): $media = $item->media; ?>
-                <?php if (!$media or ($media != null  AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')): ?>
+                <?php if ($item->type_media != 'quote' AND $item->type_media != 'link' AND $item->type_media != 'audio'): ?>
                     <li>
                         <div class="tz_slider_default">
                             <?php if ($title == 1) : ?>
@@ -44,11 +44,7 @@ if ($list):?>
                                 <div class="dv1">
                                     <?php if ($image == 1 AND $item->image != null) : ?>
                                         <div class="tz_slider_image">
-                                            <?php if ($media) :
-                                                $title_image = $media->imagetitle;
-                                            else :
-                                                $title_image = $item->title;
-                                            endif; ?>
+                                            <?php $title_image = $item->title; ?>
                                             <a href="<?php echo $item->link; ?>">
                                                 <img src="<?php echo $item->image; ?>"
                                                      title="<?php echo $title_image; ?>"
@@ -103,13 +99,13 @@ if ($list):?>
                     </li>
                 <?php endif; ?>
                 <!--use  for tz -portfolio-->
-                <?php if ($show_quote == 1 AND $media AND $media->type == 'quote'): ?>
+                <?php if ($item->type_media == 'quote'): ?>
                     <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'slider') . '_quote'); ?>
                 <?php endif; ?>
-                <?php if ($show_link == 1 AND $media AND $media->type == 'link'): ?>
+                <?php if ($item->type_media == 'link'): ?>
                     <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'slider') . '_link'); ?>
                 <?php endif; ?>
-                <?php if ($show_audio == 1 AND $media AND $media->type == 'audio'): ?>
+                <?php if ($item->type_media == 'audio'): ?>
                     <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'slider') . '_audio'); ?>
                 <?php endif; ?>
             <?php endforeach; ?>

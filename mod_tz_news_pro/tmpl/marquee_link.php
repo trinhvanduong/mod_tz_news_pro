@@ -9,10 +9,10 @@
 <li class="<?php if (isset($orientation) && $orientation == 'horizontal'):echo "tz-scroll-list";endif; ?> tz_item_default ">
     <div class="tz_marquee_link">
         <div class="link">
-            <a class="title" href="<?php echo $media->link_url; ?>"
-               target="<?php echo $media->link_target; ?>"
-               rel="<?php echo $media->link_follow; ?>">
-                <?php echo $media->link_title ?>
+            <a class="title" href="<?php echo $item->link_url; ?>"
+               target="<?php echo $item->link_target; ?>"
+               rel="<?php echo $item->link_follow; ?>">
+                <?php echo $item->link_title ?>
             </a>
         </div>
         <?php if ($des == 1) : ?>

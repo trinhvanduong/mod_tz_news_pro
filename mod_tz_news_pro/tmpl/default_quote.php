@@ -11,9 +11,9 @@
 
         <i class="icon-quote"></i>
 
-        <?php echo $media->quote_text ?>
+        <?php echo $item->quote_text ?>
         <div class="dv1">
-            <div class="muted author"><?php echo $media->quote_author; ?></div>
+            <div class="muted author"><?php echo $item->quote_author; ?></div>
         </div>
         <?php if ($date == 1 or $hits == 1 or $author_new == 1 or $cats_new == 1): ?>
             <div class="dv2">

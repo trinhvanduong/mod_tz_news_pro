@@ -7,17 +7,17 @@
  */
 ?>
 <div class="tz_accordion" id="section<?php echo $i; ?>">
-    <h3 class="tz_title">
+    <h3 class="tz_accordion_title">
         <?php echo $item->title; ?>
     </h3>
     <span></span>
 </div>
 <div class="tz_accordion_link info_accordion">
     <div class="icon-link"></div>
-    <a class="title" href="<?php echo $media->link_url; ?>"
-       target="<?php echo $media->link_target; ?>"
-       rel="<?php echo $media->link_follow; ?>">
-        <?php echo $media->link_title ?>
+    <a class="title" href="<?php echo $item->link_url; ?>"
+       target="<?php echo $item->link_target; ?>"
+       rel="<?php echo $item->link_follow; ?>">
+        <?php echo $item->link_title ?>
     </a>
     <?php if ($des == 1) : ?>
         <div class="dv1">
@@ -34,7 +34,7 @@
         <div class="dv2">
             <?php if ($hits == 1) : ?>
                 <div class="tz_accordion_hits">
-                    <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $list[$i]->hit) ?>
+                    <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $item->hit) ?>
                 </div>
             <?php endif; ?>
             <?php if ($author_new == 1): ?>
