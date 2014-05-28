@@ -23,8 +23,8 @@
                     <div class="tz_slider_image">
                         <a class="title" href="<?php echo $item->link; ?>">
                             <img src="<?php echo $item->image; ?>"
-                                 title="<?php echo $media->imagetitle; ?>"
-                                 alt="<?php echo $media->imagetitle; ?>"/>
+                                 title="<?php echo $item->title; ?>"
+                                 alt="<?php echo $item->title; ?>"/>
                         </a>
                     </div>
                 <?php endif; ?>

@@ -11,9 +11,9 @@
     <div class="info_slide tz_tooltip_quote">
 
         <i class="icon-quote"></i>
-        <?php echo $media->quote_text ?>
+        <?php echo $item->quote_text ?>
 
-        <div class="muted author"><?php echo $media->quote_author; ?></div>
+        <div class="muted author"><?php echo $item->quote_author; ?></div>
 
         <?php if ($hits == 1) : ?>
             <span class="tz_hits">

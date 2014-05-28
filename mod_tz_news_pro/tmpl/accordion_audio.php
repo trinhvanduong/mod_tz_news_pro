@@ -7,20 +7,20 @@
  */
 ?>
 <div class="tz_accordion" id="section<?php echo $i; ?>">
-    <h3 class="tz_title">
+    <h3 class="tz_accordion_title">
         <?php echo $item->title; ?>
     </h3>
     <span class=""></span>
 </div>
 <div class="tz_accordion_audio info_accordion">
-    <?php if ($image == 1 or$des == 1): ?>
+    <?php if ($image == 1 or $des == 1): ?>
         <div class="dv1">
             <?php if ($image == 1 AND $item->image != null) : ?>
                 <div class="tz_accordion_image">
                     <a class="title" href="<?php echo $item->link; ?>">
                         <img src="<?php echo $item->image; ?>"
-                             title="<?php echo $media->imagetitle; ?>"
-                             alt="<?php echo $media->imagetitle; ?>"/>
+                             title="<?php echo $item->title; ?>"
+                             alt="<?php echo $item->title; ?>"/>
                     </a>
                 </div>
             <?php endif; ?>
@@ -44,7 +44,7 @@
         <div class="dv2">
             <?php if ($hits == 1) : ?>
                 <div class="tz_accordion_hits">
-                    <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $list[$i]->hit) ?>
+                    <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $item->hit) ?>
                 </div>
             <?php endif; ?>
 

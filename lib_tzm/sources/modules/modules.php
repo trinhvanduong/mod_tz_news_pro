@@ -21,7 +21,7 @@ class XEFSourceModules extends XEFHelper
 
         for ($i=0;$i<count($mods);$i++)
         {
-
+			$items[$i] = new stdClass();
             $items[$i]->order 	= $this->getModule($mods[$i])->ordering;
             $items[$i]->title 	= $this->getModule($mods[$i])->title;
             $items[$i]->content = $items[$i]->introtext = JModuleHelper::renderModule( $this->getModule($mods[$i]), $options);
@@ -32,7 +32,7 @@ class XEFSourceModules extends XEFHelper
     }
 
     //fetch module by id
-    public function getModule( $id ){
+    public static function getModule( $id ){
 
         $db		= JFactory::getDBO();
         $where  = ' AND ( m.id='.$id.' ) ';

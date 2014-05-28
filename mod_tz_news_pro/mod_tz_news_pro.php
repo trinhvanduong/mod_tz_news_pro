@@ -99,9 +99,6 @@ $cats_new = $params->get('show_category');
 $module_tab = $params->get('modules');
 $type_tab = $params->get('type_tab');
 $title_type = $params->get('tabs_title_type');
-$show_quote = $params->get('show_quote');
-$show_link = $params->get('show_link');
-$show_audio = $params->get('show_audio');
 //option carousel
 $options = new stdClass();
 $options->autoPlay = 'false';

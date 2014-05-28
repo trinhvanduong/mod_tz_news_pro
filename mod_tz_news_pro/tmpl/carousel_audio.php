@@ -17,31 +17,31 @@
             </h3>
         <?php endif; ?>
         <?php if ($image == 1 or$des == 1): ?>
-            <div class="dv1">
-                <?php if ($image == 1) : ?>
-                    <div class="tz_carousel_image">
-                        <a class="title" href="<?php echo $item->link; ?>">
-                            <img src="<?php echo $item->image; ?>"
-                                 title="<?php echo $media->imagetitle; ?>"
-                                 alt="<?php echo $media->imagetitle; ?>"/>
-                        </a>
-                    </div>
-                <?php endif; ?>
-                <?php if ($des == 1) : ?>
-                    <span class="tz_carousel_description">
+        <div class="dv1">
+            <?php if ($image == 1 and $item->image != null) : ?>
+                <div class="tz_carousel_image">
+                    <a class="title" href="<?php echo $item->link; ?>">
+                        <img src="<?php echo $item->image; ?>"
+                             title="<?php echo $item->title; ?>"
+                             alt="<?php echo $item->title; ?>"/>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php if ($des == 1) : ?>
+                <span class="tz_carousel_description">
                         <?php if ($limittext) :
                             echo substr($item->intro, 3, $limittext);
                         else :
                             echo $item->intro;
                         endif;?>
-                        <?php if ($readmore == 1) : ?>
-                            <span class="tz_carousel_readmore">
+                    <?php if ($readmore == 1) : ?>
+                        <span class="tz_carousel_readmore">
                                 <a href="<?php echo $item->link; ?>"><?php echo JText::_('MOD_TZ_NEWS_READ_MORE') ?></a>
                             </span>
-                        <?php endif; ?>
+                    <?php endif; ?>
                 </span>
-                <?php endif; ?>
-            </div>
+            <?php endif; ?>
+        </div>
         <?php endif; ?>
         <?php if ($date == 1 or $hits == 1 or $author_new == 1 or $cats_new == 1): ?>
             <div class="dv2">

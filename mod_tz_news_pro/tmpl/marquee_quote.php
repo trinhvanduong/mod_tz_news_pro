@@ -9,10 +9,10 @@
 <li class="<?php if (isset($orientation) && $orientation == 'horizontal'):echo "tz-scroll-list";endif; ?> tz_item_default ">
     <div class="tz_marquee_quote">
         <div class="quote_text">
-            <?php echo $media->quote_text ?>
+            <?php echo $item->quote_text ?>
         </div>
         <div class="muted_author">
-            <?php echo $media->quote_author; ?>
+            <?php echo $item->quote_author; ?>
         </div>
         <?php if ($date == 1 or $hits == 1 or $author_new == 1 or $cats_new == 1): ?>
             <div class="dv1">

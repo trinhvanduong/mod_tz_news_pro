@@ -11,10 +11,10 @@
     <div class="tz_slider_quote">
         <hr class="gach"/>
         <i class="icon-quote"></i>
-        <?php echo $media->quote_text ?>
+        <?php echo $item->quote_text ?>
         <div class="dv1">
             <?php if ($params->get('show_quote_author', 1)): ?>
-                <div class="muted author"><?php echo $media->quote_author; ?></div>
+                <div class="muted author"><?php echo $item->quote_author; ?></div>
             <?php endif; ?>
         </div>
         <?php if ($date == 1 or $hits == 1 or $author_new == 1 or $cats_new == 1): ?>

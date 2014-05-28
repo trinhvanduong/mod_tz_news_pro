@@ -7,17 +7,17 @@
  */
 ?>
 <div class="tz_accordion" id="section<?php echo $i; ?>">
-    <h3 class="tz_title">
+    <h3 class="tz_accordion_title">
         <?php echo $item->title; ?>
     </h3>
     <span></span>
 </div>
 <div class="tz_accordion_quote info_accordion">
     <i class="icon-quote"></i>
-    <?php echo $media->quote_text ?>
+    <?php echo $item->quote_text ?>
     <div class="dv1">
         <div class="muted author">
-            <?php echo $media->quote_author; ?>
+            <?php echo $item->quote_author; ?>
         </div>
     </div>
     <?php if ($date == 1 or $hits == 1 or $author_new == 1 or $cats_new == 1): ?>

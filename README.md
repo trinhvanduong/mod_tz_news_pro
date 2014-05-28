@@ -1,6 +1,13 @@
 # TZ News Pro module - Joomla 2.5 and Joomla 3.x
 
 *** Changelog ***
+
+28/05/2014 - 3.2
+	
+	Fix some error with sql.
+	Change layout featured into option that only show article featured.
+	Compatible with joomla 3.3.
+
 14/03/2014 - 3.1.0
 
 	1. Fix displaying problem with Portfolio's types: quote, audio,link.

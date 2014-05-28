@@ -8,10 +8,10 @@
 <div id="sticky<?php echo $i; ?>" class="atip tz_stichky">
     <div class="info_slide tz_tooltip_link">
 
-        <a class="title" href="<?php echo $media->link_url; ?>"
-           target="<?php echo $media->link_target; ?>"
-           rel="<?php echo $media->link_follow; ?>">
-            <?php echo $media->link_title ?>
+        <a class="title" href="<?php echo $item->link_url; ?>"
+           target="<?php echo $item->link_target; ?>"
+           rel="<?php echo $item->link_follow; ?>">
+            <?php echo $item->link_title ?>
         </a>
 
         <?php if ($des == 1) : ?>

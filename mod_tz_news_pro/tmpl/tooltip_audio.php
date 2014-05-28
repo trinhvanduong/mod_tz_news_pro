@@ -18,12 +18,12 @@
             </h6>
         <?php endif; ?>
 
-        <?php if ($image == 1) : ?>
+        <?php if ($image == 1 and $item->image != null) : ?>
             <div class="tz_tooltip_image">
                 <a class="title" href="<?php echo $item->link; ?>">
                     <img src="<?php echo $item->image; ?>"
-                         title="<?php echo $media->imagetitle; ?>"
-                         alt="<?php echo $media->imagetitle; ?>"/>
+                         title="<?php echo $item->title; ?>"
+                         alt="<?php echo $item->title; ?>"/>
                 </a>
             </div>
         <?php endif; ?>

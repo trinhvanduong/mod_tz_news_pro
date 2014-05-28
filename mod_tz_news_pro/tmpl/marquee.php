@@ -44,7 +44,7 @@ $document->addScript(JUri::base() . 'modules/mod_tz_news_pro/js/jquery.simplyscr
     if (isset($list) && !empty($list)) :
         foreach ($list as $item) :
             $media = $item->media;?>
-            <?php if (!$media or ($media != null  AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')): ?>
+            <?php if ($item->type_media != 'quote' AND $item->type_media != 'link' AND $item->type_media != 'audio'): ?>
             <li class="<?php if (isset($orientation) && $orientation == 'horizontal'): echo "tz-scroll-list"; endif; ?> tz_item_default ">
                 <div class="tz_marquee_default">
                     <?php if ($title == 1): ?>
@@ -58,11 +58,7 @@ $document->addScript(JUri::base() . 'modules/mod_tz_news_pro/js/jquery.simplyscr
                     <?php if ($image == 1 or$des == 1): ?>
                         <div class="dv1">
                             <?php if ($image == 1 AND $item->image != null) : ?>
-                                <?php if ($media) :
-                                    $title_image = $media->imagetitle;
-                                else :
-                                    $title_image = $item->title;
-                                endif; ?>
+                                <?php $title_image = $item->title; ?>
                                 <div class="tz_marquee_image">
                                     <a href="<?php echo $item->link; ?>">
                                         <img src="<?php echo $item->image; ?>"
@@ -116,15 +112,15 @@ $document->addScript(JUri::base() . 'modules/mod_tz_news_pro/js/jquery.simplyscr
             </li>
         <?php endif; ?>
             <!--use  for tz -portfolio-->
-            <?php if ($show_quote == 1 AND $media AND $media->type == 'quote'): ?>
+            <?php if ($item->type_media == 'quote'): ?>
             <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'marquee') . '_quote'); ?>
         <?php endif; ?>
 
-            <?php if ($show_link == 1 AND $media AND $media->type == 'link'): ?>
+            <?php if ($item->type_media == 'link'): ?>
             <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'marquee') . '_link'); ?>
         <?php endif; ?>
 
-            <?php if ($show_audio == 1 AND $media AND $media->type == 'audio'): ?>
+            <?php if ($item->type_media == 'audio'): ?>
             <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'marquee') . '_audio'); ?>
         <?php endif; ?>
 

@@ -23,8 +23,6 @@ defined('_JEXEC') or die;
 require_once(JPATH_SITE . '/libraries/tzm/sources/modules/modules.php');
 $document = JFactory::getDocument();
 $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/tab.css');
-//var_dump(JPATH_SITE.'/libraries/tzm/sources/modules/modules.php');die;
-//var_dump($list);die;
 ?>
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -109,134 +107,125 @@ $document->addStyleSheet(JUri::base() . 'modules/mod_tz_news_pro/css/tab.css');
             $count = count($list);
         endif; ?>
         <ul class="tabs">
-            <?php for ($i = 0; $i < $count; $i++) :$media = $list[$i]->media;
-                if ($title_type == 'custom') :
-                    $title = (isset($titles[$i])) ? $titles[$i] : '';
-                else :
-                    $title = $list[$i]->title;
-                endif;?>
-                <?php if (!$media or ($media AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')) : ?>
-                    <li class="tab_li">
-                        <a class="tab_a" href="#tab<?php echo $i; ?>">
-                            <span class="tab_span"><?php echo $title; ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if ($show_quote == 1 AND $media AND $media->type == 'quote'): ?>
-                    <li class="tab_li">
-                        <a class="tab_a" href="#tab<?php echo $i; ?>">
-                            <span class="tab_span"><?php echo $title; ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if ($show_link == 1 AND $media AND $media->type == 'link'): ?>
-                    <li class="tab_li">
-                        <a class="tab_a" href="#tab<?php echo $i; ?>">
-                            <span class="tab_span"><?php echo $title; ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-                <?php if ($show_audio == 1 AND $media AND $media->type == 'audio'): ?>
-                    <li class="tab_li">
-                        <a class="tab_a" href="#tab<?php echo $i; ?>">
-                            <span class="tab_span"><?php echo $title; ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-            <?php endfor; ?>
+            <?php foreach ($list as $i => $item) :
+
+                $title = $item->title;
+                ?>
+                <?php if ($item->type_media != 'quote' AND $item->type_media != 'link' AND $item->type_media != 'audio') : ?>
+                <li class="tab_li">
+                    <a class="tab_a" href="#tab<?php echo $i; ?>">
+                        <span class="tab_span"><?php echo $title; ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+                <?php if ($item->type_media == 'quote'): ?>
+                <li class="tab_li">
+                    <a class="tab_a" href="#tab<?php echo $i; ?>">
+                        <span class="tab_span"><?php echo $title; ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+                <?php if ($item->type_media == 'link'): ?>
+                <li class="tab_li">
+                    <a class="tab_a" href="#tab<?php echo $i; ?>">
+                        <span class="tab_span"><?php echo $title; ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+                <?php if ($item->type_media == 'audio'): ?>
+                <li class="tab_li">
+                    <a class="tab_a" href="#tab<?php echo $i; ?>">
+                        <span class="tab_span"><?php echo $title; ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+            <?php endforeach; ?>
         </ul>
-        <?php for ($i = 0;
-                   $i < $count;
-                   $i++):
-            $media = $list[$i]->media; ?>
-            <?php if (!$media or ($media AND $media->type != 'quote' AND $media->type != 'link' AND $media->type != 'audio')): ?>
-            <div class="tz_tabs_introtext" id="tab<?php echo $i; ?>">
-                <div class="tz_tab_default">
-                    <?php if ($title == 1) : ?>
-                        <h3 class="tz_title">
-                            <a href="<?php echo $list[$i]->link; ?>"
-                               title="<?php echo $list[$i]->title; ?>">
-                                <?php echo $list[$i]->title; ?>
-                            </a>
-                        </h3>
-                    <?php endif; ?>
-                    <?php if ($image == 1 || $des == 1): ?>
-                        <div class="dv1">
-                            <?php if ($image == 1 AND $list[$i]->image != null) : ?>
-                                <div class="tz_tab_image">
-                                    <?php if ($media) :
-                                        $title_image = $media->imagetitle;
-                                    else :
-                                        $title_image = $list[$i]->title;
-                                    endif; ?>
-                                    <a href="<?php echo $list[$i]->link; ?>">
-                                        <img src="<?php echo $list[$i]->image; ?>" title="<?php echo $title_image; ?>"/>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
+        <?php foreach ($list as $i => $item): ?>
+            <?php if ($item->type_media != 'quote' AND $item->type_media != 'link' AND $item->type_media != 'audio'): ?>
+                <div class="tz_tabs_introtext" id="tab<?php echo $i; ?>">
+                    <div class="tz_tab_default">
+                        <?php if ($title == 1) : ?>
+                            <h3 class="tz_title">
+                                <a href="<?php echo $item->link; ?>"
+                                   title="<?php echo $item->title; ?>">
+                                    <?php echo $item->title; ?>
+                                </a>
+                            </h3>
+                        <?php endif; ?>
+                        <?php if ($image == 1 || $des == 1): ?>
+                            <div class="dv1">
+                                <?php if ($image == 1 AND $item->image != null) : ?>
+                                    <div class="tz_tab_image">
+                                        <?php $title_image = $item->title; ?>
+                                        <a href="<?php echo $item->link; ?>">
+                                            <img src="<?php echo $item->image; ?>"
+                                                 title="<?php echo $title_image; ?>"/>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
 
-                            <?php if ($des == 1) : ?>
-                                <span class="tz_description">
-                        <?php if ($limittext) :
-                            echo substr($list[$i]->intro, 3, $limittext);
-                        else :
-                            echo $list[$i]->intro;
-                        endif;?>
-                                    <?php if ($readmore == 1) : ?>
-                                        <span class="tz_readmore">
-                                    <a href="<?php echo $list[$i]->link; ?>"><?php echo JText::_('MOD_TZ_NEWS_READ_MORE') ?></a>
-                                </span>
-                                    <?php endif; ?>
-                            </span>
-                            <?php endif; ?>
+                                <?php if ($des == 1) : ?>
+                                    <span class="tz_description">
+                                        <?php if ($limittext) :
+                                            echo substr($item->intro, 3, $limittext);
+                                        else :
+                                            echo $item->intro;
+                                        endif;?>
+                                        <?php if ($readmore == 1) : ?>
+                                            <span class="tz_readmore">
+                                                <a href="<?php echo $list[$i]->link; ?>"><?php echo JText::_('MOD_TZ_NEWS_READ_MORE') ?></a>
+                                            </span>
+                                        <?php endif; ?>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($hits == 1 || $author_new == 1 || $cats_new == 1 || $date == 1): ?>
+                            <div class="dv2">
+                                <?php if ($date == 1) : ?>
+                                    <span class="tz_tab_date">
+                                        <?php echo JText::sprintf('MOD_TZ_NEWS_DATE_ALL', JHtml::_('date', $item->created, JText::_('MOD_TZ_NEWS_DATE_FOMAT'))); ?>
+                                    </span>
+                                <?php endif; ?>
 
-                        </div>
-                    <?php endif; ?>
-                    <?php if ($hits == 1 || $author_new == 1 || $cats_new == 1 || $date == 1): ?>
-                        <div class="dv2">
-                            <?php if ($date == 1) : ?>
-                                <span class="tz_tab_date">
-                                    <?php echo JText::sprintf('MOD_TZ_NEWS_DATE_ALL', JHtml::_('date', $list[$i]->created, JText::_('MOD_TZ_NEWS_DATE_FOMAT'))); ?>
-                                </span>
-                            <?php endif; ?>
+                                <?php if ($hits == 1) : ?>
+                                    <span class="tz_tab_hits">
+                                        <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $item->hit) ?>
+                                    </span>
+                                <?php endif; ?>
 
-                            <?php if ($hits == 1) : ?>
-                                <span class="tz_tab_hits">
-                                    <?php echo JText::sprintf('MOD_TZ_NEWS_HIST_LIST', $list[$i]->hit) ?>
-                                </span>
-                            <?php endif; ?>
+                                <?php if ($author_new == 1): ?>
+                                    <span class="tz_tab_author">
+                                        <?php echo JText::sprintf('MOD_TZ_NEWS_AUTHOR', $item->author); ?>
+                                    </span>
+                                <?php endif; ?>
 
-                            <?php if ($author_new == 1): ?>
-                                <span class="tz_tab_author">
-                                <?php echo JText::sprintf('MOD_TZ_NEWS_AUTHOR', $list[$i]->author); ?>
-                            </span>
-                            <?php endif; ?>
-
-                            <?php if ($cats_new == 1): ?>
-                                <span class="tz_tab_category">
-                                <?php echo JText::sprintf('MOD_TZ_NEWS_CATEGORY', $list[$i]->category); ?>
-                            </span>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="clearfix"></div>
+                                <?php if ($cats_new == 1): ?>
+                                    <span class="tz_tab_category">
+                                        <?php echo JText::sprintf('MOD_TZ_NEWS_CATEGORY', $item->category); ?>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
             <!--use tz -portfolio-->
-            <?php if ($show_quote == 1 AND $media AND $media->type == 'quote'): ?>
-            <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_quote'); ?>
-        <?php endif; ?>
+            <?php if ($item->type_media == 'quote'): ?>
+                <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_quote'); ?>
+            <?php endif; ?>
 
-            <?php if ($show_link == 1 AND $media AND $media->type == 'link'): ?>
-            <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_link'); ?>
-        <?php endif; ?>
+            <?php if ($item->type_media == 'link'): ?>
+                <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_link'); ?>
+            <?php endif; ?>
 
-            <?php if ($show_audio == 1 AND $media AND $media->type == 'audio'): ?>
-            <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_audio'); ?>
-        <?php endif; ?>
+            <?php if ($item->type_media == 'audio'): ?>
+                <?php require JModuleHelper::getLayoutPath('mod_tz_news_pro', $params->get('layout', 'tabs') . '_audio'); ?>
+            <?php endif; ?>
 
-        <?php endfor; ?>
+        <?php endforeach; ?>
     <?php endif; ?>
 </div>
 
