@@ -140,7 +140,7 @@ abstract class modTzNewsHelper
                     $item->intro = $item->introtext;
                     echo $item->event->afterDisplayContent;
                     echo $item->event->TZafterDisplayContent;
-                    $item->slug = $item->id . ':' . $item->alias;
+                    $item->slug = $item->contentid . ':' . $item->alias;
                     $item->catslug = $item->catid . ':' . $item->category_alias;
                     $item->category = $item->category_title;
                     $item->author = $item->author;
