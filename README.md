@@ -2,6 +2,10 @@
 
 *** Changelog ***
 
+24/09/2014 - 3.2.1
+
+	Fix error invaild id Article in sql.
+
 28/05/2014 - 3.2
 	
 	Fix some error with sql.
