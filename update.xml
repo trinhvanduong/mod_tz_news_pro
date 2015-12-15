@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<updates>
+    <update>
+        <name>TZNewsPro</name>
+        <description>TZ News Pro Module</description>
+        <element>mod_tz_news_pro</element>
+        <type>module</type>
+        <version>3.2.1</version>
+        <client>0</client>
+
+        <infourl title="https://github.com/trinhvanduong/mod_tz_news_pro">https://github.com/trinhvanduong/mod_tz_news_pro</infourl>
+        <downloads>
+            <downloadurl type="full" format="zip">
+                https://github.com/trinhvanduong/mod_tz_news_pro/archive/v3.2.1.zip
+            </downloadurl>
+        </downloads>
+        <maintainer>Templaza</maintainer>
+        <maintainerurl>>http://www.TemPlaza.com</maintainerurl>
+        <targetplatform name="joomla" version="3.[012345]"/>
+    </update>
+</updates>
